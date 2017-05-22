@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+        <script src="chatapp.js"></script>
+    </head>
+    <body ng-app="ChatApp">
+        <h1>Chat Application</h1>
+        <section ng-controller="ChatListController">
+            <h2>Chat Window</h2>
+            <ul>
+                <li ng-repeat="chat in chatList">
+                   
+                   {{chat.from}} : {{chat.message}}
+
+                </li>
+            </ul>
+        </section>
+        <section ng-controller="ChatController">
+    
+         <input type="text" ng-model="user_name" placeholder="Username"></input> 
+           
+            <input type="text" ng-model="chat_text" placeholder="Enter the messages"></input>
+            <button ng-click="send()">Send</button>
+  
+        </section>
+    </body>
+</html>
